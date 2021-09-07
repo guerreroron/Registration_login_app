@@ -1,0 +1,31 @@
+{% extends "registration_login_app/base.html" %}
+
+{% block title %} Welcome {% endblock %}
+
+
+<div class="container text-start">
+    <div class="row my-5">
+        {% block subtitle %} Welcome {{request.session.usuario.first_name}} {{request.session.usuario.last_name}}{% endblock %}
+{% block content %}        
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-5">                
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <b>{{ message }}</b>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}            
+            <div class="card justify-content-center mt-5">
+                <h4 class="mb-4">Estimado {{request.session.usuario.first_name}}: </h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam magnam exercitationem perferendis excepturi et, necessitatibus itaque iure cum, reprehenderit impedit tenetur ipsum saepe velit, eligendi ipsam provident blanditiis nostrum! Eos suscipit, omnis eius, temporibus ad sunt vel amet ducimus architecto quae sed obcaecati repellat accusantium laudantium modi dicta quas quam?</p>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam magnam exercitationem perferendis excepturi et, necessitatibus itaque iure cum, reprehenderit impedit tenetur ipsum saepe velit, eligendi ipsam provident blanditiis nostrum! Eos suscipit, omnis eius.</p>
+            </div>
+        </div>
+    </div>      
+</div>
+{% endblock %} 
+
